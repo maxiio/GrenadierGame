@@ -6,7 +6,7 @@ namespace Game.Player {
 		[SerializeField] private Camera mainCamera;
 		[SerializeField] private Transform rotatableTransform;
 
-		[Header("Control Settings")]
+		[Header("Settings")]
 		[SerializeField] private float mouseSensitivity = 100.0f;
 		[SerializeField] private Transform cameraPosition;
 

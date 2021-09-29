@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5923730926640346365}
   - component: {fileID: 5936599585514439444}
   - component: {fileID: 6493259991578484648}
+  - component: {fileID: 1974924817083526677}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -83,6 +84,18 @@ MonoBehaviour:
   rotatableTransform: {fileID: 9127385581058872128}
   mouseSensitivity: 1
   cameraPosition: {fileID: 782221690189574950}
+--- !u!114 &1974924817083526677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662227911432939729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a33f7890c244465a582e2a22bb34e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5941854108788029587
 GameObject:
   m_ObjectHideFlags: 0
