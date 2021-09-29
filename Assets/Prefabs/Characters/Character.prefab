@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9127385581058872128}
   - component: {fileID: 5923730926640346365}
   - component: {fileID: 5936599585514439444}
+  - component: {fileID: 6493259991578484648}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -65,10 +66,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 5923730926640346365}
-  cameraPosition: {fileID: 782221690189574950}
-  mainCamera: {fileID: 484214789211239696}
-  mouseSensitivity: 10
   playerSpeed: 5
+--- !u!114 &6493259991578484648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662227911432939729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b811a6d1dbbc4108aed32bf682e4ce0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 484214789211239696}
+  rotatableTransform: {fileID: 9127385581058872128}
+  mouseSensitivity: 1
+  cameraPosition: {fileID: 782221690189574950}
 --- !u!1 &5941854108788029587
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782221690189574950}
   m_Layer: 0
-  m_Name: CharacterRoot
+  m_Name: CameraPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
