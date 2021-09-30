@@ -1,6 +1,7 @@
 ﻿namespace Db.Object {
 	public enum EObjectType {
-		None,
-		Grenade
+		None = 0,
+		GrenadeA = 1,
+		GrenadeB = 2
 	}
 }
