@@ -15,23 +15,16 @@ namespace Game.Throw {
 		private void Update() {
 			if (_isPressed && HasItemInHand() && InputController.Instance.PressUp) {
 				_isPressed = false;
-				ThrowItemInHand();
+				aimable.StopAiming();
+				throwItemInHand.Throw();
 			}
 			
 			if (!_isPressed && HasItemInHand() && InputController.Instance.PressDown) {
 				_isPressed = true;
-				ActivateAiming();
+				aimable.StartAiming();
 			}
 		}
 
 		private bool HasItemInHand() => itemInHand.ObjectInHand != EObjectType.None;
-
-		private void ActivateAiming() {
-			aimable.StartAiming();
-		}
-
-		private void ThrowItemInHand() {
-			throwItemInHand.Throw();
-		}
 	}
 }
