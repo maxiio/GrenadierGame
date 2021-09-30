@@ -1,3 +1,4 @@
+using Game.Input;
 using UnityEngine;
 
 namespace Game.Player {
@@ -9,7 +10,7 @@ namespace Game.Player {
 		[SerializeField] private float playerSpeed = 5.0f;
 
 		private void Update() {
-			Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+			Vector3 move = new Vector3(InputController.Instance.HorizontalDirection, 0, InputController.Instance.VerticalDirection);
 			if (move.sqrMagnitude > 1.0f) {
 				move.Normalize();
 			}

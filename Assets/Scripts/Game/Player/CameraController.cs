@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Input;
+using UnityEngine;
 
 namespace Game.Player {
 	public class CameraController : MonoBehaviour {
@@ -28,7 +29,7 @@ namespace Game.Player {
 		}
 
 		private void Update() {
-			float turnPlayer = Input.GetAxis("Mouse X") * mouseSensitivity;
+			float turnPlayer = InputController.Instance.CameraVerticalDirection * mouseSensitivity;
 			_horizontalAngle += turnPlayer;
 
 			if (_horizontalAngle > 360) {
@@ -43,7 +44,7 @@ namespace Game.Player {
 			currentAngles.y = _horizontalAngle;
 			rotatableTransform.localEulerAngles = currentAngles;
 
-			var turnCam = -Input.GetAxis("Mouse Y");
+			var turnCam = -InputController.Instance.CameraHorizontalDirection;
 			turnCam *= mouseSensitivity;
 			_verticalAngle = Mathf.Clamp(turnCam + _verticalAngle, MINCameraAngle, MAXCameraAngle);
 			currentAngles = cameraPosition.transform.localEulerAngles;
