@@ -4,9 +4,9 @@ using UnityEngine;
 namespace Db.Object.Impl {
 	[CreateAssetMenu(menuName = "Settings/ObjectBase", fileName = "ObjectBase")]
 	public class ObjectBase : ScriptableObject, IObjectBase {
-		[SerializeField] private List<ObjectVo> objectVos;
+		[SerializeField] private List<GameObjectVo> gameObjectVos;
 
-		public List<ObjectVo> GetObjects 
-			=> objectVos;
+		public List<GameObjectVo> GetObjects 
+			=> gameObjectVos;
 	}
 }

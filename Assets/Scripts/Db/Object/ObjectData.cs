@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Db.Object {
 	[Serializable]
-	public class ObjectVo {
-		public EObjectType objectType;
+	public class GameObjectVo : ObjectVo {
+		public GameObject prefab;
 	}
 }

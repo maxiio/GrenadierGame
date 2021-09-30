@@ -2,6 +2,6 @@
 
 namespace Db.Object {
 	public interface IObjectBase {
-		List<ObjectVo> GetObjects { get; }
+		List<GameObjectVo> GetObjects { get; }
 	}
 }
