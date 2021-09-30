@@ -6,14 +6,17 @@ using UnityEngine;
 
 namespace Game.Inventory.Impl {
 	public class Inventory : MonoBehaviour, IInventory {
-		private List<InventoryItemVo> _inventory = new List<InventoryItemVo>();
-
 		public Action<EObjectType> ChangedItem;
+		public Action<EObjectType> AddedItem;
+		public Action<EObjectType> RemovedItem;
+
+		private List<InventoryItemVo> _inventory = new List<InventoryItemVo>();
 
 		public bool TryAddItem(EObjectType objectType) {
 			var hasAddItem = HasAddItem(objectType);
 			if (hasAddItem) {
 				ChangedItem.Invoke(objectType);
+				AddedItem.Invoke(objectType);
 			}
 
 			return hasAddItem;
@@ -31,14 +34,22 @@ namespace Game.Inventory.Impl {
 			return false;
 		}
 
+		public bool HasItem(EObjectType objectType) {
+			return TryGetItem(objectType, out InventoryItemVo _);
+		}
+
 		public bool TryRemoveItem(EObjectType objectType) {
 			var hasRemoveItem = HasRemoveItem(objectType);
 			if (hasRemoveItem) {
 				ChangedItem.Invoke(objectType);
+				RemovedItem.Invoke(objectType);
 			}
 
 			return hasRemoveItem;
 		}
+
+		public List<InventoryItemVo> GetInventoryItems()
+			=> _inventory;
 
 		private bool HasAddItem(EObjectType objectType) {
 			foreach (var item in _inventory) {

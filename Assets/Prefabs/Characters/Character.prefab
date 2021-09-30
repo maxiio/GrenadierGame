@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5936599585514439444}
   - component: {fileID: 6493259991578484648}
   - component: {fileID: 1974924817083526677}
+  - component: {fileID: 1588954466449743358}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 484214789211239696}
   rotatableTransform: {fileID: 9127385581058872128}
-  mouseSensitivity: 1
+  mouseSensitivity: 3
   cameraPosition: {fileID: 782221690189574950}
 --- !u!114 &1974924817083526677
 MonoBehaviour:
@@ -96,6 +97,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a33f7890c244465a582e2a22bb34e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1588954466449743358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662227911432939729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7febebfd8b047f78d00c56e1567ac6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 1974924817083526677}
 --- !u!1 &5941854108788029587
 GameObject:
   m_ObjectHideFlags: 0
