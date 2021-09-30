@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 6493259991578484648}
   - component: {fileID: 1974924817083526677}
   - component: {fileID: 1588954466449743358}
+  - component: {fileID: 5400950004299797183}
+  - component: {fileID: 3644203018096932703}
+  - component: {fileID: 2717780106648152696}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -110,6 +113,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 1974924817083526677}
+--- !u!114 &5400950004299797183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662227911432939729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e32c2be5863d43e186ce9d79cafa8157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInHand: {fileID: 1588954466449743358}
+  aimable: {fileID: 3644203018096932703}
+  throwItemInHand: {fileID: 2717780106648152696}
+--- !u!114 &3644203018096932703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662227911432939729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519540c9933a4b3c8a1d85f780ba4a10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 484214789211239696}
+--- !u!114 &2717780106648152696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5662227911432939729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4331aae44e2e4b5aac29b2f2909dbf37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInHand: {fileID: 1588954466449743358}
 --- !u!1 &5941854108788029587
 GameObject:
   m_ObjectHideFlags: 0

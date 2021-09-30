@@ -4,6 +4,7 @@ namespace Game.Input {
 	public class InputController : MonoBehaviour {
 		public static InputController Instance { get; protected set; }
 
+		private const int LeftMouseButton = 0;
 		private const string Vertical = "Vertical";
 		private const string Horizontal = "Horizontal";
 		private const string MouseVertical = "Mouse X";
@@ -14,6 +15,9 @@ namespace Game.Input {
 		
 		public float CameraVerticalDirection { get; private set; }
 		public float CameraHorizontalDirection { get; private set; }
+		
+		public bool PressDown { get; private set; }
+		public bool PressUp { get; private set; }
 
 		private void Awake() {
 			if (Instance != null) {
@@ -36,6 +40,9 @@ namespace Game.Input {
 		private void MouseInput() {
 			CameraVerticalDirection = UnityEngine.Input.GetAxis(MouseVertical);
 			CameraHorizontalDirection = UnityEngine.Input.GetAxis(MouseHorizontal);
+
+			PressDown = UnityEngine.Input.GetMouseButtonDown(LeftMouseButton);
+			PressUp = UnityEngine.Input.GetMouseButtonUp(LeftMouseButton);
 		}
 	}
 }
