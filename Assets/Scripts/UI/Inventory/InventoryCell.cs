@@ -1,4 +1,5 @@
 ﻿using Db.Inventory;
+using Db.Object;
 using TMPro;
 using UnityEngine;
 
@@ -7,8 +8,13 @@ namespace UI.Inventory {
 		[Header("Dependent objects")]
 		[SerializeField] private TextMeshProUGUI itemName;
 		[SerializeField] private TextMeshProUGUI itemAmount;
+
+		private EObjectType _objectType;
+
+		public EObjectType GetItemObjectType() => _objectType;
 		
-		private void UpdateInventoryCell(InventoryItemVo inventoryItemVo) {
+		public void UpdateInventoryCell(InventoryItemVo inventoryItemVo) {
+			_objectType = inventoryItemVo.ObjectType;
 			var name = inventoryItemVo.Name;
 			var amount = inventoryItemVo.Amount;
 
