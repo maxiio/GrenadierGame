@@ -1,5 +1,6 @@
 ﻿using Db.Object;
 using Game.Input;
+using Game.Interaction;
 using Game.Throwing;
 using UnityEngine;
 
@@ -14,13 +15,13 @@ namespace Game.Player {
 		private void Update() {
 			if (_isPressed && HasItemInHand() && InputController.Instance.PressUp) {
 				_isPressed = false;
-				aimable.StopAiming();
+				aimable.SwitchAimingState(false);
 				throwingObjectInHand.Throw();
 			}
 			
 			if (!_isPressed && HasItemInHand() && InputController.Instance.PressDown) {
 				_isPressed = true;
-				aimable.StartAiming();
+				aimable.SwitchAimingState(true);
 			}
 		}
 
