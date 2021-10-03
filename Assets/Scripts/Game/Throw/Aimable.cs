@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Throw {
 	public class Aimable : MonoBehaviour {
@@ -18,7 +17,9 @@ namespace Game.Throw {
 		}
 
 		private void Update() {
-			
+			if (_isAiming) {
+				
+			}
 		}
 	}
 }

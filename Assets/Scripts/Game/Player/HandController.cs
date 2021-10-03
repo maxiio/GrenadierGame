@@ -8,6 +8,7 @@ namespace Game.Player {
 		public EObjectType ObjectInHand { get; private set; }
 
 		private void Start() {
+			ObjectInHand = EObjectType.None;
 			inventory.ItemAdded += AddItemIfHandEmpty;
 			inventory.ItemRemoved += CheckHandForRemovedItem;
 		}
