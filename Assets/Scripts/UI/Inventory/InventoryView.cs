@@ -1,15 +1,18 @@
 ﻿using Db.Inventory;
 using Db.Object;
-using UI.Inventory;
 using UnityEngine;
 
-namespace Game.Inventory {
+namespace UI.Inventory {
 	public class InventoryView : MonoBehaviour {
-		[SerializeField] private Implementation.Inventory inventory;
+		[SerializeField] private Game.Inventory.Implementation.Inventory inventory;
 		[SerializeField] private InventoryCellsContainer cellsContainer;
 
 		private void Start() {
 			inventory.ChangedItem += ChangedItem;
+		}
+
+		private void OnDestroy() {
+			inventory.ChangedItem -= ChangedItem;
 		}
 
 		private void ChangedItem(EObjectType objectType) {

@@ -1,4 +1,5 @@
-﻿using Db.Object;
+﻿using System;
+using Db.Object;
 using Game.Input;
 using UnityEngine;
 
@@ -22,6 +23,11 @@ namespace Game.Player {
 			else if (InputController.Instance.SwitchToRightItem) {
 				SwitchItemByOffset(1);
 			}
+		}
+
+		private void OnDestroy() {
+			inventory.ItemAdded -= AddItemIfHandEmpty;
+			inventory.ItemRemoved -= CheckHandForRemovedItem;
 		}
 
 		public void DeleteObjectInHand() {
