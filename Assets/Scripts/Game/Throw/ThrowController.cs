@@ -5,8 +5,7 @@ using UnityEngine;
 
 namespace Game.Throw {
 	public class ThrowController : MonoBehaviour {
-		[Header("Dependent objects")]
-		[SerializeField] private ItemInHand itemInHand;
+		[SerializeField] private HandController handController;
 		[SerializeField] private Aimable aimable;
 		[SerializeField] private ThrowItemInHand throwItemInHand;
 
@@ -25,6 +24,6 @@ namespace Game.Throw {
 			}
 		}
 
-		private bool HasItemInHand() => itemInHand.ObjectInHand != EObjectType.None;
+		private bool HasItemInHand() => handController.ObjectInHand != EObjectType.None;
 	}
 }

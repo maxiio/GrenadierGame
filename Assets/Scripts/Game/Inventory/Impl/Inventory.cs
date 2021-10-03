@@ -7,8 +7,8 @@ using UnityEngine;
 namespace Game.Inventory.Impl {
 	public class Inventory : MonoBehaviour, IInventory {
 		public Action<EObjectType> ChangedItem;
-		public Action<EObjectType> AddedItem;
-		public Action<EObjectType> RemovedItem;
+		public Action<EObjectType> ItemAdded;
+		public Action<EObjectType> ItemRemoved;
 
 		private List<InventoryItemVo> _inventory = new List<InventoryItemVo>();
 
@@ -16,7 +16,7 @@ namespace Game.Inventory.Impl {
 			var hasAddItem = HasAddItem(objectType);
 			if (hasAddItem) {
 				ChangedItem.Invoke(objectType);
-				AddedItem.Invoke(objectType);
+				ItemAdded.Invoke(objectType);
 			}
 
 			return hasAddItem;
@@ -42,7 +42,7 @@ namespace Game.Inventory.Impl {
 			var hasRemoveItem = HasRemoveItem(objectType);
 			if (hasRemoveItem) {
 				ChangedItem.Invoke(objectType);
-				RemovedItem.Invoke(objectType);
+				ItemRemoved.Invoke(objectType);
 			}
 
 			return hasRemoveItem;
@@ -50,6 +50,11 @@ namespace Game.Inventory.Impl {
 
 		public List<InventoryItemVo> GetInventoryItems()
 			=> _inventory;
+
+		public bool TryGetAnyItem(out InventoryItemVo item) {
+			item = _inventory.Count == 0 ? null : _inventory[0];
+			return item != null;
+		}
 
 		private bool HasAddItem(EObjectType objectType) {
 			foreach (var item in _inventory) {

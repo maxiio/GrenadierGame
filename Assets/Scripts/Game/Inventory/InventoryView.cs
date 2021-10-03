@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace Game.Inventory {
 	public class InventoryView : MonoBehaviour {
-		[Header("Dependent objects")]
 		[SerializeField] private Impl.Inventory inventory;
 		[SerializeField] private InventoryCellsContainer cellsContainer;
 

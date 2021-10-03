@@ -1,9 +1,8 @@
-﻿using System.Collections;
+﻿using System;
 using UnityEngine;
 
 namespace Game.Throw {
 	public class Aimable : MonoBehaviour {
-		[Header("Dependent objects")]
 		[SerializeField] private Camera camera;
 
 		private bool _isAiming;
@@ -16,6 +15,10 @@ namespace Game.Throw {
 		public void StopAiming() {
 			Debug.Log("Stop Aiming");
 			_isAiming = false;
+		}
+
+		private void Update() {
+			
 		}
 	}
 }
