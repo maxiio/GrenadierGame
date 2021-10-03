@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697872cfa56344e6a41d09388e71b1cb, type: 3}
   m_Name: ObjectBase
   m_EditorClassIdentifier: 
-  objectVos:
+  gameObjectVos:
   - objectType: 1
-    prefab: {fileID: 0}
+    prefab: {fileID: 3641288889064394147, guid: c681d811439d6334aa91a62c03fdd040, type: 3}
+  - objectType: 2
+    prefab: {fileID: 9208667407783547671, guid: 5f1d513ad3d089546b317626bbc94860, type: 3}
+  - objectType: 3
+    prefab: {fileID: 489511463027958676, guid: d0cc69d4f9acc124ca5290e25739a213, type: 3}

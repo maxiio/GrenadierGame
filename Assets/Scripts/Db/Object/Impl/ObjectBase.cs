@@ -6,7 +6,12 @@ namespace Db.Object.Impl {
 	public class ObjectBase : ScriptableObject, IObjectBase {
 		[SerializeField] private List<GameObjectVo> gameObjectVos;
 
-		public List<GameObjectVo> GetObjects 
-			=> gameObjectVos;
+		public bool HasObject(EObjectType objectType) {
+			return GetObjectSettings(objectType) != null;
+		}
+
+		public GameObjectVo GetObjectSettings(EObjectType objectType) {
+			return gameObjectVos.Find(x => x.objectType == objectType);
+		}
 	}
 }
