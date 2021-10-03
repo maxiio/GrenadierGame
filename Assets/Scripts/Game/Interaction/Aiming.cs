@@ -11,15 +11,15 @@ namespace Game.Interaction {
 		[SerializeField] private ObjectInHandController objectInHandController;
 		[SerializeField] private Camera weaponCamera;
 		[SerializeField] private LineRenderer lineRendererComponent;
-
+		[SerializeField] private Transform startPosition;
+		
 		private float _speed;
 		private bool _isAiming;
 
 		private void Update() {
 			if (_isAiming) {
-				var startPosition = transform.position;
 				var direction = weaponCamera.transform.forward;
-				RenderTrajectory(startPosition, direction, _speed);
+				RenderTrajectory(startPosition.position, direction, _speed);
 			}
 		}
 		
@@ -39,13 +39,13 @@ namespace Game.Interaction {
 			lineRendererComponent.gameObject.SetActive(value);
 		}
 
-		private void RenderTrajectory(Vector3 startPosition, Vector3 direction, float speed) {
+		private void RenderTrajectory(Vector3 position, Vector3 direction, float speed) {
 			Vector3[] points = new Vector3[LineRendererPointsCount];
 			lineRendererComponent.positionCount = points.Length;
 
 			for (int i = 0; i < points.Length; i++) {
 				float time = i * DistanceBetweenPoints;
-				points[i] = startPosition + direction * speed * time + Physics.gravity * time * time / 2f;
+				points[i] = position + direction * speed * time + Physics.gravity * time * time / 2f;
 			}
 
 			lineRendererComponent.SetPositions(points);

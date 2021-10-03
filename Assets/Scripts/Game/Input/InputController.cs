@@ -2,15 +2,13 @@
 
 namespace Game.Input {
 	public class InputController : MonoBehaviour {
-		public static InputController Instance { get; protected set; }
+		public static InputController Instance { get; private set; }
 
 		private const int LeftMouseButton = 0;
 		private const string Vertical = "Vertical";
 		private const string Horizontal = "Horizontal";
 		private const string MouseVertical = "Mouse X";
 		private const string MouseHorizontal = "Mouse Y";
-		private const string LeftArrow = "Mouse Y";
-		private const string RightArrow = "Mouse Y";
 		
 		public float VerticalDirection { get; private set; }
 		public float HorizontalDirection { get; private set; }
