@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Db.Weapon {
 	[Serializable]
 	public class ThrowableWeaponVo : ObjectVo {
-		public float launchForce;
+		public float forceSpeed;
 		public GameObject projectilePrefab;
 	}
 }

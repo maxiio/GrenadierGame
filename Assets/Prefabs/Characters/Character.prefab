@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectInHandController: {fileID: 1588954466449743358}
-  aimable: {fileID: 5385355131596539446}
+  aiming: {fileID: 5385355131596539446}
   throwingObjectInHand: {fileID: 2717780106648152696}
 --- !u!114 &4140433168192331279
 MonoBehaviour:
@@ -235,7 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519540c9933a4b3c8a1d85f780ba4a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 484214789211239696}
+  throwableWeaponBase: {fileID: 11400000, guid: 47f6d534aed11b74e8abb254948fbda7, type: 2}
+  objectInHandController: {fileID: 1588954466449743358}
+  weaponCamera: {fileID: 484214789211239696}
   lineRendererComponent: {fileID: 7088628187553862959}
 --- !u!120 &7088628187553862959
 LineRenderer:

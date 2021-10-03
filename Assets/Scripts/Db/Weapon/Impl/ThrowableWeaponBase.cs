@@ -7,9 +7,6 @@ namespace Db.Weapon.Impl {
 	public class ThrowableWeaponBase : ScriptableObject, IThrowableWeaponBase {
 		[SerializeField] private List<ThrowableWeaponVo> throwableWeaponVos;
 
-		public List<ThrowableWeaponVo> GetThrowableWeapons 
-			=> throwableWeaponVos;
-
 		public bool TryGetThrowableWeapon(EObjectType objectType, out ThrowableWeaponVo throwableWeaponVo) {
 			throwableWeaponVo = null;
 			foreach (var weaponVo in throwableWeaponVos) {
@@ -19,6 +16,14 @@ namespace Db.Weapon.Impl {
 				}
 			}
 			return false;
+		}
+
+		public bool HasSettings(EObjectType objectType) {
+			return GetSettings(objectType) != null;
+		}
+
+		public ThrowableWeaponVo GetSettings(EObjectType objectType) {
+			return throwableWeaponVos.Find(x => x.objectType == objectType);
 		}
 	}
 }

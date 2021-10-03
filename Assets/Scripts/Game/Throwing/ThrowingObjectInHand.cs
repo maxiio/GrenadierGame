@@ -18,7 +18,7 @@ namespace Game.Throwing {
 				var throwableObject = Instantiate(throwableWeaponVo.projectilePrefab, position, rotation);
 
 				var direction = throwDirection.forward.normalized;
-				var force = throwableWeaponVo.launchForce;
+				var force = throwableWeaponVo.forceSpeed;
 				var throwableComponent = throwableObject.GetComponent<Throwable>();
 				throwableComponent.Throw(direction, force);
 			}

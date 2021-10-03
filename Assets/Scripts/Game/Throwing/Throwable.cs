@@ -10,7 +10,7 @@ namespace Game.Throwing {
 		}
 
 		public void Throw(Vector3 direction, float force) {
-			_rigidbody.AddForce(direction * force);
+			_rigidbody.AddForce(direction * force, ForceMode.VelocityChange);
 		}
 	}
 }

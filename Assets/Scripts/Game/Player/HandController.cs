@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Game.Player {
 	public class HandController : MonoBehaviour {
 		[SerializeField] private ObjectInHandController objectInHandController;
-		[SerializeField] private Aimable aimable;
+		[SerializeField] private Aiming aiming;
 		[SerializeField] private ThrowingObjectInHand throwingObjectInHand;
 
 		private bool _isPressed;
@@ -15,13 +15,13 @@ namespace Game.Player {
 		private void Update() {
 			if (_isPressed && HasItemInHand() && InputController.Instance.PressUp) {
 				_isPressed = false;
-				aimable.SwitchAimingState(false);
+				aiming.SwitchAimingState(false);
 				throwingObjectInHand.Throw();
 			}
 			
 			if (!_isPressed && HasItemInHand() && InputController.Instance.PressDown) {
 				_isPressed = true;
-				aimable.SwitchAimingState(true);
+				aiming.SwitchAimingState(true);
 			}
 		}
 
