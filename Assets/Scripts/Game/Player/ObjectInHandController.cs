@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Player {
 	public class ObjectInHandController : MonoBehaviour {
-		[SerializeField] private Inventory.Impl.Inventory inventory;
+		[SerializeField] private Inventory.Implementation.Inventory inventory;
 
 		public EObjectType ObjectInHand { get; private set; }
 		private int _inventoryIndexOfObject;

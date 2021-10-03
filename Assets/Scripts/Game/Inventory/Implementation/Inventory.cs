@@ -4,7 +4,7 @@ using Db.Inventory;
 using Db.Object;
 using UnityEngine;
 
-namespace Game.Inventory.Impl {
+namespace Game.Inventory.Implementation {
 	public class Inventory : MonoBehaviour, IInventory {
 		public Action<EObjectType> ChangedItem;
 		public Action<EObjectType> ItemAdded;

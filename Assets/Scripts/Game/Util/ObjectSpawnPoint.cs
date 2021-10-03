@@ -1,9 +1,9 @@
 ﻿using Db.Object;
-using Db.Object.Impl;
+using Db.Object.Implementation;
 using Db.Respawn.Implementation;
 using UnityEngine;
 
-namespace Game.Location.Place {
+namespace Game.Util {
 	public class ObjectSpawnPoint : MonoBehaviour {
 		[SerializeField] private ObjectBase objectBase;
 		[SerializeField] private RespawnBase respawnBase;

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Db.Object.Impl {
+namespace Db.Object.Implementation {
 	[CreateAssetMenu(menuName = "Settings/ObjectBase", fileName = "ObjectBase")]
 	public class ObjectBase : ScriptableObject, IObjectBase {
 		[SerializeField] private List<GameObjectVo> gameObjectVos;
