@@ -1,31 +1,29 @@
 ﻿using Db.Object;
+using Game.Input;
+using Game.Throwing;
 using UnityEngine;
 
 namespace Game.Player {
 	public class HandController : MonoBehaviour {
-		[SerializeField] private Inventory.Impl.Inventory inventory;
+		[SerializeField] private ObjectInHandController objectInHandController;
+		[SerializeField] private Aimable aimable;
+		[SerializeField] private ThrowingObjectInHand throwingObjectInHand;
 
-		public EObjectType ObjectInHand { get; private set; }
-
-		private void Start() {
-			ObjectInHand = EObjectType.None;
-			inventory.ItemAdded += AddItemIfHandEmpty;
-			inventory.ItemRemoved += CheckHandForRemovedItem;
-		}
-
-		private void CheckHandForRemovedItem(EObjectType removedItemObjectType) {
-			if (inventory.HasItem(removedItemObjectType)) {
-				return;
+		private bool _isPressed;
+		
+		private void Update() {
+			if (_isPressed && HasItemInHand() && InputController.Instance.PressUp) {
+				_isPressed = false;
+				aimable.StopAiming();
+				throwingObjectInHand.Throw();
 			}
-
-			inventory.TryGetAnyItem(out var inventoryItem);
-			ObjectInHand = inventoryItem?.ObjectType ?? EObjectType.None;
-		}
-
-		private void AddItemIfHandEmpty(EObjectType addedItemObjectType) {
-			if (ObjectInHand == EObjectType.None) {
-				ObjectInHand = addedItemObjectType;
+			
+			if (!_isPressed && HasItemInHand() && InputController.Instance.PressDown) {
+				_isPressed = true;
+				aimable.StartAiming();
 			}
 		}
+
+		private bool HasItemInHand() => objectInHandController.ObjectInHand != EObjectType.None;
 	}
 }

@@ -2,7 +2,7 @@
 using Game.Inventory;
 using UnityEngine;
 
-namespace Game.Interact {
+namespace Game.Interaction {
 	public class Collectable : MonoBehaviour {
 		[Header("Dependent objects")]
 		[SerializeField] private SphereCollider sphereCollider;

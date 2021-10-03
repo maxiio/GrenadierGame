@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.Throw {
+namespace Game.Throwing {
 	public class Aimable : MonoBehaviour {
 		[SerializeField] private Camera camera;
 

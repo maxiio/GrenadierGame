@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6844188484927247980}
   - component: {fileID: 6437982907229308687}
   - component: {fileID: 7809424000769296887}
+  - component: {fileID: -1871133414654230472}
   m_Layer: 0
   m_Name: ThrowableGrenadeA
   m_TagString: Untagged
@@ -112,3 +113,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1871133414654230472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310893224316007421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 093ce02c5cac48b6953d5b6a9b4e3302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
