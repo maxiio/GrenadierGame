@@ -20,6 +20,9 @@ namespace UI.Inventory {
 			{
 				cellsContainer.UpdateItemInfo(item);
 			}
+			else {
+				cellsContainer.HideCellByObjectType(objectType);
+			}
 		}
 	}
 }

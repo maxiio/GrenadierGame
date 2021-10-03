@@ -19,6 +19,7 @@ namespace UI.Inventory {
 
 			itemName.text = name;
 			itemAmount.text = amount.ToString();
+			gameObject.SetActive(true);
 		}
 	}
 }
