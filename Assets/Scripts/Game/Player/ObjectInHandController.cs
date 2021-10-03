@@ -1,4 +1,5 @@
 ﻿using Db.Object;
+using Game.Input;
 using UnityEngine;
 
 namespace Game.Player {
@@ -6,12 +7,27 @@ namespace Game.Player {
 		[SerializeField] private Inventory.Impl.Inventory inventory;
 
 		public EObjectType ObjectInHand { get; private set; }
+		private int _inventoryIndexOfObject;
 
 		private void Start() {
 			ObjectInHand = EObjectType.None;
 			inventory.ItemAdded += AddItemIfHandEmpty;
 			inventory.ItemRemoved += CheckHandForRemovedItem;
 		}
+
+		private void Update() {
+			if (InputController.Instance.SwitchToLeftItem) {
+				SwitchItemByOffset(-1);
+			}
+			else if (InputController.Instance.SwitchToRightItem) {
+				SwitchItemByOffset(1);
+			}
+		}
+
+		private void SwitchItemByOffset(int offset) {
+			
+		}
+
 
 		private void CheckHandForRemovedItem(EObjectType removedItemObjectType) {
 			if (inventory.HasItem(removedItemObjectType)) {
@@ -26,6 +42,11 @@ namespace Game.Player {
 			if (ObjectInHand == EObjectType.None) {
 				ObjectInHand = addedItemObjectType;
 			}
+		}
+
+		private void SetObjectInHand(EObjectType objectType, int index) {
+			_inventoryIndexOfObject = index;
+			ObjectInHand = objectType;
 		}
 	}
 }
