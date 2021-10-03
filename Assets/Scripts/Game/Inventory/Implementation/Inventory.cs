@@ -56,6 +56,10 @@ namespace Game.Inventory.Implementation {
 			return item != null;
 		}
 
+		public int GetItemIndex(EObjectType objectType) {
+			return _inventory.FindIndex(x => x.ObjectType == objectType);
+		}
+
 		private bool HasAddItem(EObjectType objectType) {
 			foreach (var item in _inventory) {
 				if (item.ObjectType == objectType) {

@@ -1,4 +1,5 @@
-﻿using Db.Object;
+﻿using System;
+using Db.Object;
 using Game.Input;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace Game.Player {
 		private int _inventoryIndexOfObject;
 
 		private void Start() {
-			ObjectInHand = EObjectType.None;
+			SetObjectInHand(EObjectType.None);
 			inventory.ItemAdded += AddItemIfHandEmpty;
 			inventory.ItemRemoved += CheckHandForRemovedItem;
 		}
@@ -25,9 +26,17 @@ namespace Game.Player {
 		}
 
 		private void SwitchItemByOffset(int offset) {
-			
+			var items = inventory.GetInventoryItems();
+			var itemsCount = items.Count;
+			if (itemsCount != 0) {
+				var rowIndex = _inventoryIndexOfObject + offset;
+				var newIndex = rowIndex >= 0 ? rowIndex % itemsCount : rowIndex + itemsCount;
+				SetObjectInHand(items[newIndex].ObjectType);
+			}
+			else {
+				SetObjectInHand(EObjectType.None);
+			}
 		}
-
 
 		private void CheckHandForRemovedItem(EObjectType removedItemObjectType) {
 			if (inventory.HasItem(removedItemObjectType)) {
@@ -35,17 +44,18 @@ namespace Game.Player {
 			}
 
 			inventory.TryGetAnyItem(out var inventoryItem);
-			ObjectInHand = inventoryItem?.ObjectType ?? EObjectType.None;
+			var objectInHand = inventoryItem?.ObjectType ?? EObjectType.None;
+			SetObjectInHand(objectInHand);
 		}
 
 		private void AddItemIfHandEmpty(EObjectType addedItemObjectType) {
 			if (ObjectInHand == EObjectType.None) {
-				ObjectInHand = addedItemObjectType;
+				SetObjectInHand(addedItemObjectType);
 			}
 		}
 
-		private void SetObjectInHand(EObjectType objectType, int index) {
-			_inventoryIndexOfObject = index;
+		private void SetObjectInHand(EObjectType objectType) {
+			_inventoryIndexOfObject = objectType == EObjectType.None ? -1 : inventory.GetItemIndex(objectType);
 			ObjectInHand = objectType;
 		}
 	}
