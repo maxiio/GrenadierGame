@@ -1,4 +1,5 @@
-﻿using Game.Input;
+﻿using Db.Camera;
+using Game.Input;
 using UnityEngine;
 
 namespace Game.Player {
@@ -8,17 +9,17 @@ namespace Game.Player {
 		[SerializeField] private Transform rotatableTransform;
 
 		[Header("Settings")]
-		[SerializeField] private float mouseSensitivity = 100.0f;
+		[SerializeField] private CameraBase cameraBase;
 		[SerializeField] private Transform cameraPosition;
 
 		private float _horizontalAngle;
 		private float _verticalAngle;
-		private const float MINCameraAngle = -89.0f;
-		private const float MAXCameraAngle = 89.0f;
 
 		private void Start() {
-			Cursor.lockState = CursorLockMode.Locked;
-			Cursor.visible = false;
+			if (cameraBase.HasLockCursor) {
+				Cursor.lockState = CursorLockMode.Locked;
+				Cursor.visible = false;
+			}
 			
 			var mainCameraTransform = mainCamera.transform;
 			mainCameraTransform.SetParent(cameraPosition, false);
@@ -29,7 +30,7 @@ namespace Game.Player {
 		}
 
 		private void Update() {
-			float turnPlayer = InputController.Instance.CameraVerticalDirection * mouseSensitivity;
+			float turnPlayer = InputController.Instance.CameraVerticalDirection * cameraBase.MouseSensitivity;
 			_horizontalAngle += turnPlayer;
 
 			if (_horizontalAngle > 360) {
@@ -45,8 +46,8 @@ namespace Game.Player {
 			rotatableTransform.localEulerAngles = currentAngles;
 
 			var turnCam = -InputController.Instance.CameraHorizontalDirection;
-			turnCam *= mouseSensitivity;
-			_verticalAngle = Mathf.Clamp(turnCam + _verticalAngle, MINCameraAngle, MAXCameraAngle);
+			turnCam *= cameraBase.MouseSensitivity;
+			_verticalAngle = Mathf.Clamp(turnCam + _verticalAngle, cameraBase.MinCameraAngle, cameraBase.MaxCameraAngle);
 			currentAngles = cameraPosition.transform.localEulerAngles;
 			currentAngles.x = _verticalAngle;
 			cameraPosition.transform.localEulerAngles = currentAngles;

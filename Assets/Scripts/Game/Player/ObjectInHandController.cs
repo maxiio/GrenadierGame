@@ -1,5 +1,4 @@
-﻿using System;
-using Db.Object;
+﻿using Db.Object;
 using Game.Input;
 using UnityEngine;
 
