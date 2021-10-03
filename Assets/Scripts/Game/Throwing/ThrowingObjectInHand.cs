@@ -21,6 +21,7 @@ namespace Game.Throwing {
 				var force = throwableWeaponVo.forceSpeed;
 				var throwableComponent = throwableObject.GetComponent<Throwable>();
 				throwableComponent.Throw(direction, force);
+				objectInHandController.DeleteObjectInHand();
 			}
 		}
 	}
