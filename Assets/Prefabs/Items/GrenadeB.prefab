@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6788206957714787947}
   - component: {fileID: 3675369870706210438}
   - component: {fileID: 3792795178042206181}
+  - component: {fileID: 6261697778481067977}
   - component: {fileID: 3566583472504133477}
   m_Layer: 0
   m_Name: GrenadeB
@@ -96,6 +97,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6261697778481067977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208667407783547671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f6a20645e94abdb7a545f3b8d07430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 2
 --- !u!114 &3566583472504133477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ba557ab7b024092bbe12946b549deab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereCollider: {fileID: 3792795178042206181}
-  objectType: 2
-  radius: 1
+  objectTypeHolder: {fileID: 6261697778481067977}

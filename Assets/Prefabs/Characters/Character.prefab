@@ -84,8 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da94b19fee9f3224e95f4d64e2c20c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBase: {fileID: 11400000, guid: cec052e6b7d6f294cbf867870b223a6e, type: 2}
   characterController: {fileID: 5923730926640346365}
-  playerSpeed: 5
 --- !u!114 &6493259991578484648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 484214789211239696}
   rotatableTransform: {fileID: 9127385581058872128}
-  mouseSensitivity: 3
+  cameraBase: {fileID: 11400000, guid: 8b1e58c0ebf0ad9429c40786976eb003, type: 2}
   cameraPosition: {fileID: 782221690189574950}
 --- !u!114 &1974924817083526677
 MonoBehaviour:
@@ -254,6 +254,7 @@ MonoBehaviour:
   objectInHandController: {fileID: 1588954466449743358}
   weaponCamera: {fileID: 484214789211239696}
   lineRendererComponent: {fileID: 7088628187553862959}
+  startPosition: {fileID: 8873474602967332186}
 --- !u!120 &7088628187553862959
 LineRenderer:
   m_ObjectHideFlags: 0

@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwableWeaponVos:
   - objectType: 1
+    damage: 1
+    splashRadius: 3
     forceSpeed: 20
     projectilePrefab: {fileID: 1310893224316007421, guid: 7a6912c199f743748bd476ffe3309fb0, type: 3}
   - objectType: 2
+    damage: 2
+    splashRadius: 5
     forceSpeed: 10
     projectilePrefab: {fileID: 3327701415560621217, guid: 0d3119b7d6977974ba68a2e4c2159424, type: 3}

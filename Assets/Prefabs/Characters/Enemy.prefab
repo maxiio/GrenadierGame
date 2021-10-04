@@ -376,6 +376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1667ae1aef44d78592123fbfd83c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiEffects: {fileID: 11400000, guid: 0d1ef83c020f35c4bb00d4c127f66386, type: 2}
   damageable: {fileID: 8787756012069332826}
   textMesh: {fileID: 2289159775977782716}
-  timeToDisplay: 2

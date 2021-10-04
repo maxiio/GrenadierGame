@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7297849993584236627}
   - component: {fileID: 865664879400389130}
   - component: {fileID: -5658424387399966613}
+  - component: {fileID: -9035600138189077146}
   m_Layer: 0
   m_Name: ThrowableGrenadeB
   m_TagString: Untagged
@@ -126,5 +127,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionFxPrefab: {fileID: 2850059512644305964, guid: 911f3507dc41707458edcb8780ef1c25, type: 3}
-  radius: 5
-  damage: 1
+  weaponBase: {fileID: 11400000, guid: 47f6d534aed11b74e8abb254948fbda7, type: 2}
+  objectTypeHolder: {fileID: -9035600138189077146}
+--- !u!114 &-9035600138189077146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3327701415560621217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f6a20645e94abdb7a545f3b8d07430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 2

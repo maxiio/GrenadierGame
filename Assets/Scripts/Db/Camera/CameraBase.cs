@@ -3,9 +3,9 @@
 namespace Db.Camera {
 	[CreateAssetMenu(menuName = "Settings/" + nameof(CameraBase), fileName = nameof(CameraBase))]
 	public class CameraBase : ScriptableObject {
-		[SerializeField] private float mouseSensitivity = 100.0f;
-		[SerializeField] private float minCameraAngle = -89.0f;
-		[SerializeField] private float maxCameraAngle = 89.0f;
+		[SerializeField] private float mouseSensitivity;
+		[SerializeField] private float minCameraAngle;
+		[SerializeField] private float maxCameraAngle;
 		[SerializeField] private bool hasLockCursor;
 
 		public float MouseSensitivity 
