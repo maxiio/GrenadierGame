@@ -8,7 +8,7 @@ namespace Util {
 
 		private readonly Queue<T> _objectsQueue = new Queue<T>();
 		private const int PoolSizeMultiplication = 2;
-		
+
 		private int _poolSize = 2;
 
 		private void Awake() {
@@ -44,10 +44,8 @@ namespace Util {
 
 		private T CreateObject() {
 			var obj = Instantiate(prefab, transform);
-
 			obj.transform.SetParent(transform);
 			obj.gameObject.SetActive(false);
-
 			return obj;
 		}
 	}

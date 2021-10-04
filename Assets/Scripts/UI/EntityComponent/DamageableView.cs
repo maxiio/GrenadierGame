@@ -1,14 +1,13 @@
-﻿using Game.EntityComponent;
+﻿using Db.UI;
+using Game.EntityComponent;
 using TMPro;
 using UnityEngine;
 
 namespace UI.EntityComponent {
 	public class DamageableView : MonoBehaviour {
+		[SerializeField] private UIEffects uiEffects;
 		[SerializeField] private Damageable damageable;
 		[SerializeField] private TextMeshProUGUI textMesh;
-
-		[Header("Cfg")]
-		[SerializeField] private float timeToDisplay;
 		
 		private void Start() {
 			DisableText();
@@ -22,7 +21,7 @@ namespace UI.EntityComponent {
 		private void DisplayChanges(float healthDelta) {
 			textMesh.gameObject.SetActive(true);
 			textMesh.text = healthDelta.ToString();
-			Invoke(nameof(DisableText), timeToDisplay);
+			Invoke(nameof(DisableText), uiEffects.TimeToDisplayDamage);
 		}
 
 		private void DisableText() {

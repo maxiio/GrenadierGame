@@ -3,7 +3,7 @@ using Db.Object;
 using UnityEngine;
 
 namespace Db.Weapon.Implementation {
-	[CreateAssetMenu(menuName = "Settings/ThrowableWeaponBase", fileName = "ThrowableWeaponBase")]
+	[CreateAssetMenu(menuName = "Settings/" + nameof(ThrowableWeaponBase), fileName = nameof(ThrowableWeaponBase))]
 	public class ThrowableWeaponBase : ScriptableObject, IThrowableWeaponBase {
 		[SerializeField] private List<ThrowableWeaponVo> throwableWeaponVos;
 

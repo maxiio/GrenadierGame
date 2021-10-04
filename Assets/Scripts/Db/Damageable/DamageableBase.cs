@@ -3,7 +3,7 @@ using Db.Object;
 using UnityEngine;
 
 namespace Db.Damageable {
-	[CreateAssetMenu(menuName = "Settings/DamageableBase", fileName = "DamageableBase")]
+	[CreateAssetMenu(menuName = "Settings/" + nameof(DamageableBase), fileName = nameof(DamageableBase))]
 	public class DamageableBase : ScriptableObject {
 		[SerializeField] private List<DamageableObjectVo> damageableSettings;
 

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace Db.Object.Implementation {
-	[CreateAssetMenu(menuName = "Settings/ObjectBase", fileName = "ObjectBase")]
+	[CreateAssetMenu(menuName = "Settings/" + nameof(ObjectBase), fileName = nameof(ObjectBase))]
 	public class ObjectBase : ScriptableObject, IObjectBase {
 		[SerializeField] private List<GameObjectVo> gameObjectVos;
 

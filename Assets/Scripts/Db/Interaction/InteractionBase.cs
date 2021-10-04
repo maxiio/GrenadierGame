@@ -3,7 +3,7 @@ using Db.Object;
 using UnityEngine;
 
 namespace Db.Interaction {
-	[CreateAssetMenu(menuName = "Settings/InteractionBase", fileName = "InteractionBase")]
+	[CreateAssetMenu(menuName = "Settings/" + nameof(InteractionBase), fileName = nameof(InteractionBase))]
 	public class InteractionBase : ScriptableObject {
 		[SerializeField] private List<InteractiveObjectVo> damageableSettings;
 

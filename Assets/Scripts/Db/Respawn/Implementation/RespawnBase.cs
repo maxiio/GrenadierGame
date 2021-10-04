@@ -3,7 +3,7 @@ using Db.Object;
 using UnityEngine;
 
 namespace Db.Respawn.Implementation {
-	[CreateAssetMenu(menuName = "Settings/RespawnBase", fileName = "RespawnBase")]
+	[CreateAssetMenu(menuName = "Settings/" + nameof(RespawnBase), fileName = nameof(RespawnBase))]
 	public class RespawnBase : ScriptableObject, IRespawnBase {
 		[SerializeField] private List<RespawnSettings> respawnSettingsList;
 		
