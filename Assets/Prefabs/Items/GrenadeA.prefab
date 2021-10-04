@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8782302788322359633}
   - component: {fileID: 879407403328344467}
   - component: {fileID: 8952234676899416529}
+  - component: {fileID: -3007487720817230605}
   m_Layer: 0
   m_Name: GrenadeA
   m_TagString: Untagged
@@ -123,3 +124,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTypeHolder: {fileID: 879407403328344467}
+--- !u!114 &-3007487720817230605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641288889064394147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4a23e462b147a2ad4320d8abfc6abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 9097904191576778802}
