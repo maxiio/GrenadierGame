@@ -1,6 +1,5 @@
 ﻿using Db.Object;
 using Game.Input;
-using Game.Interaction;
 using Game.Throwing;
 using UnityEngine;
 

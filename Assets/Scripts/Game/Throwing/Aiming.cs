@@ -2,7 +2,7 @@
 using Game.Player;
 using UnityEngine;
 
-namespace Game.Interaction {
+namespace Game.Throwing {
 	public class Aiming : MonoBehaviour {
 		private const int LineRendererPointsCount = 100;
 		private const float DistanceBetweenPoints = 0.1f;
